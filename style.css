@@ -10,19 +10,6 @@ a {
     cursor: pointer;
 }
 
-body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow-x: hidden;
-    min-height: 100vh;
-    background: #00B4DB;
-    background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
-    background: linear-gradient(to right, #0083B0, #00B4DB);
-    scroll-behavior: smooth;
-}
-
 /* Custom scrollbar */
 ::-webkit-scrollbar {
     width: 2px;
@@ -38,6 +25,32 @@ body{
     border-radius: 10px;
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    min-height: 100vh;
+    background: #00B4DB;
+    background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+    background: linear-gradient(to right, #0083B0, #00B4DB);
+    scroll-behavior: smooth;
+}
+
+.section-title {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    max-width: 400px;
+    font-family: cursive;
+    font-size: 30px;
+    text-align: center;
+    border-bottom: 2px solid white;
+}
+
 
 /* Header styling */
 .header {
@@ -49,17 +62,20 @@ body{
     width: 100vw;
     height: 100px;
     background: white;
+    z-index: 999;
 }
 
 .header .left {
     display: grid;
     place-items: center;
-    margin-inline: 40px;
+    margin-inline: 80px;
     font-size: 18px;
     width: 100px;
     text-align: center;
     font-family: cursive;
     font-weight: 700;
+    cursor: pointer;
+    user-select: none;
 }
 
 .header .right {
@@ -76,6 +92,28 @@ body{
     justify-content: space-around;
     font-family: cursive;
     font-size: 18px;
+}
+
+.links a {
+    position: relative;
+    padding-inline: 10px;
+    user-select: none;
+}
+
+.links a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-bottom: 2px solid black;
+    transition: all 0.3s ease;
+    z-index: 99;
+}
+
+.links a:hover::after {
+    width: 100%;
 }
 
 .appointment-btn {
@@ -99,22 +137,54 @@ body{
     height: 100vh;
 }
 
-h1 {
-    width: 100vw;
-    padding-inline: 80px;
-    text-align: left;
-}
-
 #welcome p {
     font-family: sans-serif;
     font-size: 20px;
     text-indent: 40px;
-    padding-inline: 40px;
+    text-align: center;
 }
 
 /* About section */
 #about {
-    width: 400px;
-    height: 100vh;
-    background: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: black;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+    padding-inline: 60px;
+}
+
+/* Services section */
+#services {
+    background: crimson;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+    padding-inline: 60px;
+}
+
+/* FAQ section */
+#faq {
+    background: transparent;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+    padding-inline: 60px;
 }
