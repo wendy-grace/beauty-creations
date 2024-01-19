@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.back-btn {
+    position: absolute;
+    top: 80px;
+    left: 80px;
+    padding: 10px 20px;
+    background: black;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    font-family: cursive;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: white;
+    color: black;
+}
+
+.form-wrapper {
+    width: 500px;
+    height: 80vh;
+    background: white;
+    border-radius: 10px;
+}
