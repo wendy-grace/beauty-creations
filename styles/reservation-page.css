@@ -4,10 +4,14 @@
     box-sizing: border-box;
 }
 
+:root {
+    --form-width: 500px;
+}
+
 .back-btn {
     position: absolute;
-    top: 80px;
-    left: 80px;
+    top: 20px;
+    left: 20px;
     padding: 10px 20px;
     background: black;
     border-radius: 10px;
@@ -24,8 +28,157 @@
 }
 
 .form-wrapper {
-    width: 500px;
+    display: flex;
+    flex-direction: column;
+    width: var(--form-width);
     height: 80vh;
     background: white;
     border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-wrapper .form-title {
+    display: grid;
+    place-items: center;
+    font-family: cursive;
+    font-size: 24px;
+    height: 10%;
+}
+
+.form-wrapper #slider {
+    display: flex;
+    width: 300%;
+    height: 90%;
+    background: linear-gradient(to right, red, blue);
+    position: absolute;
+    top: 10%;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.form-wrapper #slider .slide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    width: var(--form-width);
+    height: 100%;
+    background: white;
+}
+
+.form-wrapper #slider .slide .prev, .form-wrapper #slider .slide .next {
+    position: absolute;
+    font-size: 30px;
+    font-weight: 800;
+    width: 35px;
+    height: 35px;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.form-wrapper #slider .slide .prev:hover, .form-wrapper #slider .slide .next:hover {
+    box-shadow:  0 0 5px 5px black;
+}
+
+.form-wrapper #slider .slide .prev {
+    left: 10px;
+}
+
+.form-wrapper #slider .slide .next {
+    right: 10px;
+}
+
+.form-wrapper #slider .slide button {
+    position: absolute;
+    top: 80%;
+    width: 120px;
+    padding: 20px;
+    background: black;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.form-wrapper #slider .slide .slide-title {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-family: cursive;
+    font-size: 24px;
+}
+
+.form-wrapper #slider .slide .slide-title .number {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    background: crimson;
+    border-radius: 50%;
+    color: white;
+    margin-inline: 10px;
+}
+
+.form-wrapper #slider .slide .slide-content {
+    position: absolute;
+    top: 40px;
+    width: 80%;
+    min-height: 90%;
+    display: flex;
+    flex-direction: column;
+    font-size: 22px;
+    background: rgba(220, 20, 60, 0.9);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.form-wrapper #slider .slide .slide-content .field {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 90%;
+}
+
+.form-wrapper #slider .slide .slide-content .field label {
+    font-family: monospace;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.form-wrapper #slider .slide .slide-content .field input,
+.form-wrapper #slider .slide .slide-content .field select {
+    outline: none;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid white;
+    padding: 10px;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.form-wrapper #slider .slide .slide-content .field input:focus {
+    background: black;
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.form-wrapper #slider .slide .slide-content .field input::placeholder {
+    color: white;
+    font-style: italic;
+}
+
+.form-wrapper #slider .slide .slide-content .field select option {
+    color: black;
 }

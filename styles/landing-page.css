@@ -1,6 +1,6 @@
 .section-title {
     position: absolute;
-    top: 200px;
+    top: 150px;
     left: 50%;
     transform: translateX(-50%);
     width: 60%;
@@ -120,12 +120,34 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-width: 100vw;
     min-height: 100vh;
     background: black;
     color: white;
     font-family: sans-serif;
     font-size: 20px;
     padding-inline: 60px;
+    padding-top: 200px;
+}
+
+#about .section-title {
+    top: 150px;
+}
+
+#about p {
+    font-size: 16px;
+    text-indent: 20px;
+    padding: 10px 20px;
+    width: 1000px;
+}
+
+#about p img {
+    width: 200px;
+    border-radius: 50%;
+    float: left;
+    margin-top: -30px;
+    margin-right: 20px;
+    shape-outside: circle(50%);
 }
 
 /* Services section */
@@ -136,11 +158,35 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-width: 100vw;
     min-height: 100vh;
     color: white;
     font-family: sans-serif;
     font-size: 20px;
     padding-inline: 60px;
+}
+
+#services .services-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: left;
+}
+
+#services .services-wrapper .service {
+    display: grid;
+    place-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: black;
+    margin: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+#services .services-wrapper .service:hover {
+    transform: scale(1.2);
 }
 
 /* FAQ section */
@@ -151,6 +197,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-width: 100vw;
     min-height: 100vh;
     color: black;
     font-family: sans-serif;
@@ -160,4 +207,33 @@
 
 #faq .section-title {
     border-bottom: 2px solid black;
+}
+
+#faq .faq-wrapper {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    margin-top: 250px;
+}
+
+#faq .faq-wrapper .question {
+    overflow: hidden;
+    width: 80%;
+    height: 130px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#faq .faq-wrapper .question.hidden {
+    height: 60px;
+}
+
+#faq .faq-wrapper .question .answer {
+    color: blue;
+    margin-top: 20px;
+    font-family: cursive;
 }
