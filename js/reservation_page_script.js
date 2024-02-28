@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Slider functionality
     const slider = document.getElementById('slider');
-    const form_width = 500; // Must be the same with the css value
+    const form_width = 400; // Must be the same with the css value
 
 
     // Get the nav buttons

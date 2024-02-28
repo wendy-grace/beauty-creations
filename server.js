@@ -1,16 +1,15 @@
 const mysql = require("mysql");
-const http = require("http");
+const express = require("express");
 const fs = require("fs");
+const cors = require("cors");
 
-// Create a connection to the MySQL database
 const db = mysql.createConnection({
 	host: "localhost",
-	user: "root", // your MySQL username
-	password: "", // your MySQL password
+	user: "root",
+	password: "",
 	database: "beauty_creations_db",
 });
 
-// Connect to the database
 db.connect((err) => {
 	if (err) {
 		throw err;
@@ -18,9 +17,11 @@ db.connect((err) => {
 	console.log("MySQL Connected");
 });
 
-// Create a simple HTTP server
-const server = http.createServer((req, res) => {
-	// Handle your HTTP requests here
+const app = express(); // Use express to create the app
+
+app.use(cors());
+
+app.get("/", (req, res) => {
 	res.writeHead(200, { "Content-Type": "text/html" });
 	fs.readFile("index.html", (err, data) => {
 		if (err) {
@@ -31,24 +32,35 @@ const server = http.createServer((req, res) => {
 	});
 });
 
-// Listen on a specific port (e.g., 3000)
-server.listen(3000, () => {
-	console.log("Server running on http://localhost:3000");
+// Get all reservations
+app.get("/api/reservations", (req, res) => {
+	db.query("SELECT * from reservations", (err, result) => {
+		if (err) {
+			throw err;
+		}
+		res.writeHead(200, { "Content-Type": "application/json" });
+		res.end(JSON.stringify(result));
+	});
 });
 
 
-// ... (previous code)
-
-// Example route to handle database interaction
-server.on('/getData', (req, res) => {
-    db.query('SELECT * FROM your_table_name', (err, result) => {
-        if (err) {
-            throw err;
-        }
-        res.writeHead(200, {'Content-Type': 'application/json'});
-        res.end(JSON.stringify(result));
-    });
+// Admin sign in
+app.get("/api/admin-sign-in", (req, res) => {
+	const { username, password } = req.query;
+	db.query(
+		`SELECT * from admin WHERE username = '${username}' AND password = '${password}'`,
+		(err, result) => {
+			if (err) {
+				throw err;
+			}
+			res.writeHead(200, { "Content-Type": "application/json" });
+			res.end(JSON.stringify(result));
+		}
+	);
 });
 
-// ... (more code)
+const PORT = process.env.PORT || 3000;
 
+app.listen(PORT, () => {
+	console.log(`Server running on http://localhost:${PORT}`);
+});

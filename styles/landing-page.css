@@ -20,9 +20,15 @@
     top: 0;
     left: 0;
     width: 100vw;
+    height: 120px;
+    background: transparent;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.header.scrolled {
     height: 100px;
     background: white;
-    z-index: 999;
 }
 
 .header .left {
@@ -65,8 +71,7 @@
     content: '';
     position: absolute;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     width: 0;
     height: 100%;
     border-bottom: 2px solid black;
