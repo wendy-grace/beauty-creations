@@ -46,6 +46,19 @@ app.get("/api/reservations", (req, res) => {
 	});
 });
 
+// New reservation
+app.post("/api/reservations", (req, res) => {
+	db.query(`INSERT INTO reservations (firstname, lastname, service, time, phone, alt_phone, email) VALUES ('${req.body.firstname}', '${req.body.lastname}', '${req.body.service}', '${req.body.time}', '${req.body.phone}', '${req.body.alt_phone}', '${req.body.email}')`,
+		(err, result) => {
+			if (err) {
+				throw err;
+			}
+			res.writeHead(200, { "Content-Type": "application/json" });
+			res.end(JSON.stringify(result));
+		}
+	)
+})
+
 
 // Admin sign in
 app.post("/api/admin-sign-in", (req, res) => {

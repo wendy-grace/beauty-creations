@@ -13,11 +13,20 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(data => {
         data.forEach(reservation => {
 
-            const reservationHTML = `
-            <div className='reservation'>
-                <div className='service'>${reservation.service}</div>
-                <div className='name'>${reservation.firstname} ${reservation.lastname}</div>
+            /* Format date and time */
+            // Date is in datetime format
+            const reservationDate = new Date(reservation.time);
+            const formattedDate = reservationDate.toLocaleDateString();
+            const formattedTime = reservationDate.toLocaleTimeString();
 
+
+            const reservationHTML = `
+            <div class='reservation'>
+                <div class='service'>${reservation.service}</div>
+                <div class='name'>${reservation.firstname} ${reservation.lastname}</div>
+
+                <div class='time'>${formattedTime}</div>
+                <div class='date'>${formattedDate}</div>
             </div>
             `
 

@@ -28,4 +28,47 @@ document.addEventListener('DOMContentLoaded', () => {
             slider.style.left = ((i + 1) * -form_width) + 'px';
         })
     };
+
+    /* Submit button */
+    const submit_btn = document.getElementById('submit-btn');
+
+    submit_btn.addEventListener('click', evt => {
+        evt.preventDefault();
+
+        // Get input values
+        const firstname = document.getElementById('firstname').value;
+        const lastname = document.getElementById('lastname').value;
+        const service = document.getElementById('service').value;
+        const time = document.getElementById('time').value;
+        const phone = document.getElementById('phone').value;
+        const alt_phone = document.getElementById('alt_phone').value;
+        const email = document.getElementById('email').value;
+
+        // Create reservation object
+        const reservation = {
+            firstname,
+            lastname,
+            service,
+            time,
+            phone,
+            alt_phone,
+            email
+        };
+
+        // Send reservation to server
+        fetch('http://localhost:3000/api/reservations', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(reservation)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            alert('Reservation successful');
+            document.location.href = '/'; // Navigate to the homepage
+        })
+
+    })
 });
