@@ -88,10 +88,41 @@ form button:hover {
 
 /* Main page */
 .reservations-wrapper {
+    position: relative;
     width: 100%;
-    
+    height: 100vh;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 .reservations-title {
+    position: absolute;
     width: 100%;
+    top: 40px;
+    left: 40px;
+    font-size: 30px;
     color: white;
+}
+
+.reservations {
+    position: absolute;
+    top: 100px;
+    width: 90%;
+    height: 80vh;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.reservations .reservation {
+    width: 90%;
+    background: black;
+    color: red;
 }
