@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../base.css">
+    <link rel="stylesheet" href="../styles/reservation-page.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Beauty Creations - Make Reservation</title>
+</head>
+<body>
+    <button id="back-btn" class="back-btn"><i class="bx bx-x"></i></button>
+    <div class="form-wrapper">
+
+        <div id="slider">
+
+            <!-- Slide 1 -->
+            <div class="slide" tabindex="1">
+                <div class="slide-title">
+                    <span class="text">Reservation| Personal Details</span>
+                </div>
+
+                <div class="slide-content">
+
+                    <div class="field">
+                        <label>First Name</label>
+                        <input type="text" placeholder="i.e John">
+                    </div>
+
+                    <div class="field">
+                        <label>Last Name</label>
+                        <input type="text" placeholder="i.e Doe">
+                    </div>
+                </div>
+
+
+                <div class="next">
+                    <i class="bx bx-right-arrow-alt"></i>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide" tabindex="2">
+                <div class="slide-title">
+                    <span class="text">Reservation| Appointment Details</span>
+                </div>
+
+                <div class="slide-content">
+
+                    <div class="field">
+                        <label>Select a service</label>
+                        <select name="services" id="services">
+                            <option value="service-1">Braiding</option>
+                            <option value="service-2">Weaving</option>
+                            <option value="service-3">Dye</option>
+                            <option value="service-4">Manicure and pedicure</option>
+                            <option value="service-5">Wigs</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Time</label>
+                        <select name="time" id="time">
+                            <option value="time-1">Time 1</option>
+                            <option value="time-2">Time 2</option>
+                            <option value="time-3">Time 3</option>
+                            <option value="time-4">Time 4</option>
+                            <option value="time-5">Time 5</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="prev">
+                    <i class="bx bx-left-arrow-alt"></i>
+                </div>
+
+                <div class="next">
+                    <i class="bx bx-right-arrow-alt"></i>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide" tabindex="3">
+                <div class="slide-title">
+                    <span class="text">Reservation| Contact Details</span>
+                </div>
+
+                <div class="slide-content">
+
+                    <div class="field">
+                        <label>Phone Number</label>
+                        <input type="text" placeholder="+254xxxxxxxxx">
+                    </div>
+
+                    <div class="field">
+                        <label>Alt Phone Number</label>
+                        <input type="text" placeholder="+254xxxxxxxxx">
+                    </div>
+
+                    <div class="field">
+                        <label>Email</label>
+                        <input type="email" placeholder="abc123@gmail.com">
+                    </div>
+                </div>
+
+
+                <div class="prev">
+                    <i class="bx bx-left-arrow-alt"></i>
+                </div>
+
+                <button>Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/reservation_page_script.js"></script>
+</body>
+</html>

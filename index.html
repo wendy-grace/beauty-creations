@@ -3,38 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="./styles/landing-page.css">
     <title>Beauty Creations Salon</title>
 </head>
 <body>
 
     <!-- Header -->
-    <div class="header">
+    <div class="header" id="header">
         <div class="left">
-            BEAUTY CREATIONS
+            <a href="#welcome">BEAUTY CREATIONS</a>
         </div>
 
         <div class="right">
             <div class="links">
                 <a href="#about">About</a>
-                <a href="">Services</a>
-                <a href="">FAQ</a>
-                <a href="" class="appointment-btn">Reserve Seat</a>
+                <a href="#services">Services</a>
+                <a href="#faq">FAQ</a>
+                <button id="reserve-btn" class="reserve-btn">Reserve Seat</button>
             </div>
         </div>
     </div>
 
-    <!-- Welcome page -->
+    <!-- Welcome section -->
     <div id="welcome">
         <h1>WELCOME TO BEAUTY CREATIONS SALON!</h1>
         <p>Strand by strand, we craft brilliance. <br> Your hair our artistry!</p> 
     </div>
 
-    <!-- About page -->
+    <!-- About section -->
     <div id="about">
+        <div class="section-title">About</div>
+        <p>
+            <img src="./assets/about-image-1.jpg" alt="About page image">
+            Welcome to Beauty Creations, where we believe in the power of beauty to transform lives.
+            Nestled in the heart of Nairobi, our salon is more than just a place to get your hair and nails done - 
+            it's an experience that enhances your natural radiance and boosts your confidence.
 
+            At Beauty Creations, we understand that each individual is unique, and so are their beauty needs.
+            Our team of skilled and passionate professionals is dedicated to providing personalized and tailored services to bring out the best in you.
+            Whether you're looking for a trendy haircut, a vibrant hair color, flawless nails, or a relaxing spa treatment,
+            we've got you covered. </p>
+
+        <p>Our salon is designed to create a welcoming and comfortable atmosphere.
+            From the moment you step through our doors,
+            you'll be greeted by a team of friendly and talented stylists who are committed to making your visit a delightful one.
+            We believe that pampering yourself is not just a luxury but a necessity,
+            and we strive to make every moment at Beauty Creations a rejuvenating and enjoyable experience.</p>
+
+        <p>We take pride in being a salon that fosters creativity and self-expression.
+            Whether you're seeking a classic look or a bold and adventurous transformation,
+            our team is dedicated to bringing your vision to life.
+            Beauty Creations is not just a salon; it's a place where artistry meets expertise.</p>
+
+        <p>Join us on a journey of self-discovery and empowerment at Beauty Creations.
+            We look forward to becoming your trusted partner in enhancing your beauty and well-being.
+            Book your appointment today and let us create beauty that is uniquely yours.</p>
     </div>
 
+    <!-- Services section -->
+    <div id="services">
+        <div class="section-title">Our Services</div>
 
+        <div class="services-wrapper">
+            <div class="service">Service 1</div>
+            <div class="service">Service 2</div>
+            <div class="service">Service 3</div>
+            <div class="service">Service 4</div>
+            <div class="service">Service 5</div>
+        </div>
+    </div>
+
+    <!-- FAQ section -->
+    <div id="faq">
+        <div class="section-title">Frequently Asked Questions</div>
+
+        <div class="faq-wrapper">
+            <div class="question hidden">
+                <span>Question goes here....</span>
+                <div class="answer">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, sequi.</div>
+            </div>
+            <div class="question hidden">
+                <span>Question goes here....</span>
+                <div class="answer">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, sequi.</div>
+            </div>
+            <div class="question hidden">
+                <span>Question goes here....</span>
+                <div class="answer">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, sequi.</div>
+            </div>
+            <div class="question hidden">
+                <span>Question goes here....</span>
+                <div class="answer">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, sequi.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load js -->
+    <script src="./js/landing_page_script.js"></script>
 </body>
 </html>
