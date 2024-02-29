@@ -84,3 +84,14 @@ form button {
 form button:hover {
     background: #0083B0;
 }
+
+
+/* Main page */
+.reservations-wrapper {
+    width: 100%;
+    
+}
+.reservations-title {
+    width: 100%;
+    color: white;
+}
