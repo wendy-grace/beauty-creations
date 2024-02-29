@@ -118,11 +118,26 @@ form button:hover {
 
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 
 .reservations .reservation {
+    position: relative;
     width: 90%;
-    background: black;
-    color: red;
+    padding: 20px;
+    background: #c0bbbb;
+    border-radius: 10px;
+}
+
+
+.reservation .time {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.reservation .date {
+    position: absolute;
+    right: 20px;
 }
